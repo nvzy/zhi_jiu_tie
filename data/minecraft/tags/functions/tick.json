@@ -1,0 +1,8 @@
+{
+  "values": [
+    "zhi_jiu_tie:enchant/detect_enchant_targets",
+    "zhi_jiu_tie:enchant/process_enchant",
+    "zhi_jiu_tie:enchant_up/detect_enchant_up_targets",  
+    "zhi_jiu_tie:enchant_up/process_enchant_up"       
+  ]
+}
