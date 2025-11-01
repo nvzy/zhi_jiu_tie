@@ -4,9 +4,11 @@
 # 1. 清除旧标签
 execute as @e[type=minecraft:item_frame] run tag @s remove valid_enchant_up_frame
 execute as @e[type=minecraft:item] run tag @s remove target_enchant_up_item
+# 新增：不在玩家5格内的展示框，直接移除标签（初始过滤）
+execute as @e[type=minecraft:item_frame] at @s unless entity @a[distance=0..5] run tag @s remove valid_enchant_up_frame
 
-# 2. 标记固体方块上的展示框
-execute as @e[type=minecraft:item_frame] at @s unless block ~ ~-1 ~ minecraft:air unless block ~ ~-1 ~ minecraft:water unless block ~ ~-1 ~ minecraft:lava run tag @s add valid_enchant_up_frame
+# 2. 标记“玩家5格内+固体方块上”的展示框（补充距离条件）
+execute as @e[type=minecraft:item_frame] at @s unless block ~ ~-1 ~ minecraft:air unless block ~ ~-1 ~ minecraft:water unless block ~ ~-1 ~ minecraft:lava if entity @a[distance=0..5] run tag @s add valid_enchant_up_frame
 
 # 3. 过滤无附魔物品（核心保留）
 execute as @e[tag=valid_enchant_up_frame] unless data entity @s Item run tag @s remove valid_enchant_up_frame

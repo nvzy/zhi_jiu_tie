@@ -8,3 +8,7 @@ schedule function zhi_jiu_tie:core/load_core 20t
 schedule function zhi_jiu_tie:core/init_core 20t
 schedule function zhi_jiu_tie:enchant/init_enchant 20t
 schedule function zhi_jiu_tie:enchant_up/init_enchant_up 20t
+
+
+# 新增：排序模块初始化
+schedule function zhi_jiu_tie:enchant_sort/init_enchant_sort 20t

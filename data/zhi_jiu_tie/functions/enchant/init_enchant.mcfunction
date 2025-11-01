@@ -1,9 +1,10 @@
 # ==============================================
-# 致旧铁-v0.6.1 | 强制附魔模块 - 初始化
+# 致旧铁 | 强制附魔模块 - 初始化  
 # 作者：QQ酱779138
 # 作用：1. 注册所有依赖的分数板（解决报黄）；2. 初始化计时器默认值；3. 加载提示
 # 说明：仅在数据包加载时执行一次，为强制附魔功能提供数据基础（1.20.1兼容）
 # ==============================================
+
 # 注册核心分数板（解决debug_counter、enchant_random等报黄问题）
 scoreboard objectives add debug_counter dummy "调试计数器"
 scoreboard objectives add enchant_random dummy "附魔数据暂存（等级/ID）"
@@ -20,7 +21,7 @@ scoreboard players set _global_timer debug_counter 0
 scoreboard players set @e[type=minecraft:item_frame] nbt_debug 0
 scoreboard players set @e[type=minecraft:item] nbt_debug 0
 
-# 精简加载提示（明确版本与核心规则）
-tellraw @a {"text":"[致旧铁-v0.6.1] 强制附魔模块加载完成！","color":"gray"}
+# 精简加载提示（移除版本号）
+tellraw @a {"text":"[致旧铁] 强制附魔模块加载完成！","color":"gray"}
 tellraw @a {"text":"• 核心规则：","color":"gray"}
 tellraw @a {"text":"固体方块→展示框（含物品）→上方扔附魔书→强制附魔（无视冲突，消耗1本）","color":"gray"}
